@@ -29,14 +29,9 @@ function renderStatistics(ctx, names, times) {
   var indent = 90;
   var initialX = 120;
   var initialY = 80;
-  for (i = 0; i < times.length; i++) {
-    if (names[i] === 'Вы') {
-      ctx.fillStyle = 'red';
-    } else {
-      ctx.fillStyle = 'blue';
-    }
+  ctx.fillStyle = (names[i] === 'Вы') ? 'red' : 'blue';
 
     ctx.fillRect(initialX + indent * i, initialY + (histogramWidth - times[i] * step), barWidth, times[i] * step);
-  }
-}
+
+
 
